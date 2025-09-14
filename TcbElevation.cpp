@@ -34,7 +34,7 @@ int wmain(int argc, wchar_t** argv)
         return 1;
     }
 
-    SC_HANDLE hService = CreateService(hScm, serviceName, nullptr, SERVICE_ALL_ACCESS, SERVICE_WIN32_OWN_PROCESS, SERVICE_AUTO_START, SERVICE_ERROR_IGNORE, cmdline, nullptr, nullptr, nullptr, nullptr, nullptr);
+    SC_HANDLE hService = CreateService(hScm, serviceName, nullptr, SERVICE_ALL_ACCESS, SERVICE_WIN32_OWN_PROCESS, SERVICE_DEMAND_START, SERVICE_ERROR_IGNORE, cmdline, nullptr, nullptr, nullptr, nullptr, nullptr);
     if (!hService)
     {
         printf("Error creating service %d\n", GetLastError());
